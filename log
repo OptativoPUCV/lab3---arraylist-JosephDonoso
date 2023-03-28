@@ -31,3 +31,9 @@ Tue 28 Mar 2023 02:18:34 AM UTC:
  1 file changed, 4 insertions(+)
  tests:  0|0
 37d2a45
+Tue 28 Mar 2023 02:18:57 AM UTC: 
+ arraylist.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  8|2
+total_score: 40/70
+7c7895a
