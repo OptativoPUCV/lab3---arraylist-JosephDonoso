@@ -48,7 +48,8 @@ void *pop(ArrayList *l, int i) {
   if (i < 0)
     i = l->size + i;
   void *data = l->data[i];
-  for (int indx = i; indx < l->size - 1; indx++) {
+  l->size -= 1;
+  for (int indx = i; indx < l->size; indx++) {
     l->data[indx] = l->data[indx + 1];
   }
   return data;
