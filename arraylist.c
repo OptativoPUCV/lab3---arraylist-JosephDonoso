@@ -12,14 +12,22 @@ typedef struct ArrayList {
 
 ArrayList *createList(void) {
   ArrayList * arrList = (ArrayList *) malloc(sizeof(ArrayList));
-  arrList->data = (void **) malloc(2*sizeof(void *));
+  arrList->data = (void **) malloc(2 * sizeof(void *));
   arrList->capacity = 2;
   arrList->size = 0;
   return arrList;
 }
 
-void append(ArrayList * l, void * data){
+void resize(ArrayList * l){
+  l->capacity = l->capacity * 2;
+  l->data = (void **) realloc(l->data, l->capacity * sizeof(void *));
+}
 
+void append(ArrayList * l, void * data){
+  if(l->size == l->capacity)
+    resize(l);
+  l->data[l->size] = data;
+  l->size += 1;
 }
 
 void push(ArrayList * l, void * data, int i){
