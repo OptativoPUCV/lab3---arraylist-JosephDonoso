@@ -31,7 +31,15 @@ void append(ArrayList * l, void * data){
 }
 
 void push(ArrayList * l, void * data, int i){
-
+  if(i <= l->size){
+    if(l->size == l->capacity)
+      resize(l);
+    for(int indx = l->size; indx > i; indx--){
+      l->data[indx] = l->data[indx-1];
+    }
+    l->data[i] = data;
+    l->size += 1;
+  }
 }
 
 void* pop(ArrayList * l, int i){
